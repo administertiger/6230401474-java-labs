@@ -17,14 +17,17 @@ package pongsuwan.surapat.lab2 ;
 public class Athlete {
     
     public static void main(String[] args) {
-         String name = args[0] ;
-         String sport = args[1] ;
-         String nation = args[2] ;
 
+        if (args.length != 3) {
+            System.out.println("Athlete <athlete name> <sport name> <nationality>") ;
+            System.exit(0) ;
+        }   
 
-         System.out.println("My favorite athlete is " 
-         + name + " who plays " + sport + 
-         " and has nationality as " + nation) ;
+        String name = args[0] ;
+        String sport = args[1] ;
+        String nation = args[2] ;
 
+         
+        System.out.println("My favorite athlete is " + name + " who plays " + sport + " and has nationality as " + nation) ;
+         }
     }
-}

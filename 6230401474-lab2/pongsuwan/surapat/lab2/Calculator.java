@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-
 /**
  * This Athlete program is to accept three arguments: athlete name, the sport name 
 *  that that athlete plays, and the nationality of that athlete.  Its output format is "My 
@@ -12,7 +10,6 @@ import java.text.DecimalFormat;
 * Date: December 12, 2019
 *
 **/
-
 
 package pongsuwan.surapat.lab2 ;
 
