@@ -1,4 +1,11 @@
-//package pongsuwan.surapat.lab3;
+/*
+Author: Surapat Pongsuwan
+ID: 623040147-4
+Sec: 2
+Date: December 23, 2019
+*/
+
+package pongsuwan.surapat.lab3;
 
 import java.util.Scanner;
 
