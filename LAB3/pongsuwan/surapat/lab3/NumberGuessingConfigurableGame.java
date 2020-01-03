@@ -52,7 +52,7 @@ public class NumberGuessingConfigurableGame {
     static void genAnswer() 
     {
         Random random = new Random();
-        answer = random.nextInt(max - min + 1) + 1;
+        answer = random.nextInt(max - min + 1) + min;
     }
 
     
