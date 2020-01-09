@@ -1,3 +1,14 @@
+package pongsuwan.surapat.lab4;
+
+/**
+ * This program is to create a class "Person" and test the code.
+ * 
+ * Author: Surapat Pongsuwan
+ * ID: 623040147-4
+ * Section: 2
+ * Date: January 9, 2020
+ */
+
 import java.text.DecimalFormat;
 
 public class Person {
@@ -71,4 +82,6 @@ public class Person {
     }
 
 }
+
+
 
