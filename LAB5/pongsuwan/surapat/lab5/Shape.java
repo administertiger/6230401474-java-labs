@@ -1,5 +1,14 @@
 package pongsuwan.surapat.lab5;
 
+/*
+* This program is to create an abstract class name "Shape" to inherit other class.
+* 
+* Author : Surapat Pongsuwan
+* ID : 623040147-4  
+* Section : 2
+* Date : January 13, 2020
+*/
+
 public abstract class Shape {
     protected String color;
     protected boolean filled;
@@ -25,9 +34,9 @@ public abstract class Shape {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
-    public abstract double getArea();
-
-    public abstract double getPerimeter();
+    public abstract double getArea(); // Abstract method.
+ 
+    public abstract double getPerimeter(); // Abstract method.
 
     @Override
     public String toString() {

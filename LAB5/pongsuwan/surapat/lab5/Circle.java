@@ -1,5 +1,14 @@
 package pongsuwan.surapat.lab5;
 
+/*
+* This program is to create a subclass name "Circle" which extends from class "Shape".
+* 
+* Author : Surapat Pongsuwan
+* ID : 623040147-4  
+* Section : 2
+* Date : January 13, 2020
+*/
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -13,7 +22,7 @@ public class Circle extends Shape {
         this.radius = radius;
     }
     Circle(double radius, String color, boolean filled) {
-        super(color, filled); // Take "color" and "filled" back to Shape's constructor.
+        super(color, filled); // Take "color" and "filled" to Shape's constructor to set the variable.
         this.radius = radius;
     }
 
@@ -23,13 +32,13 @@ public class Circle extends Shape {
     public void setRadius(double radius) {
         this.radius = radius;
     }
-    @Override  //Calculate the area.
-    public double getArea() {
+    @Override  // An abstract method that have to declare. 
+    public double getArea() { 
         double area = (Math.PI) * (radius * radius);
         BigDecimal _area = new BigDecimal(area).setScale(2, RoundingMode.HALF_UP);;
         return _area.doubleValue();
     }
-    @Override  //Calculate the perimeter.
+    @Override  // An abstract method that have to declare.
     public double getPerimeter() {
         double perimeter = 2 * Math.PI * radius; 
         BigDecimal _perimeter = new BigDecimal(perimeter).setScale(2, RoundingMode.HALF_UP);;
