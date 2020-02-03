@@ -1,7 +1,7 @@
 package pongsuwan.surapat.lab6;
 
 /*
-* This program is to create a class "MySimpleWindow" which extends from "JFrame".
+* This program is to create a class "MySimpleWindow" which extends "JFrame".
 *
 * Author : Surapat Pongsuwan
 * ID : 623040147-4
@@ -16,44 +16,35 @@ import javax.swing.SwingUtilities;
 
 class MySimpleWindow extends JFrame {
 
-    protected String fname;
-    protected JButton okButton;
-    protected JButton cancelButton;
-    protected JPanel panel;
-    protected JFrame frame;
+   protected JPanel panel;  
+   protected JButton okButton;
+   protected JButton cancelButton;
 
-    MySimpleWindow (String name) {
-        this.fname = name;
-    }
+   //A default constructor.
+   MySimpleWindow(String name) {
+    setTitle(name);
+}
 
-    protected void addComponents() {
-        frame = new JFrame(fname);
+   protected void addComponents() {
+       panel = new JPanel();
+       okButton = new JButton("OK♥");
+       cancelButton = new JButton("Cancel");
+       panel.add(cancelButton);
+       panel.add(okButton);
+       add(panel);
+   }
 
-        okButton = new JButton("OK♥");
-        cancelButton = new JButton("Cancel");
-        panel = new JPanel();
+   protected void setFrameFeatures() {
+       setLocationRelativeTo(null);
+       pack();
+       setVisible(true);
+       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   }
 
-        panel.add(okButton);
-        panel.add(cancelButton);
-
-        frame.add(panel);
-
-
-    }
-
-    protected void setFrameFeatures() {
-        
-        frame.setLocationRelativeTo(null);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-
-    
     public static void createAndShowGUI() {
-    MySimpleWindow msw = new MySimpleWindow("My Simple Window");
-    msw.addComponents();
-    msw.setFrameFeatures();
+        MySimpleWindow msw = new MySimpleWindow("My Simple Window");
+        msw.addComponents();
+        msw.setFrameFeatures();
     }
 
 
