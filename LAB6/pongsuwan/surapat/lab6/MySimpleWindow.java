@@ -9,29 +9,45 @@ package pongsuwan.surapat.lab6;
 * Date : January 20, 2020
 */
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
+import java.awt.*;
 
-class MySimpleWindow extends JFrame {
+public class MySimpleWindow extends JFrame {
 
+    //Quick fix warning: Java(536871008)
+    private static final long serialVersionUID = 1L;
+    // -------------Components.-----------------
    protected JPanel panel;  
-   protected JButton okButton;
-   protected JButton cancelButton;
+   protected JButton okButton, cancelButton;
+   protected GridBagConstraints gbc;
+    //-----------------------------------------
 
    //A default constructor.
    MySimpleWindow(String name) {
     setTitle(name);
 }
-
-   protected void addComponents() {
-       panel = new JPanel();
+    //A mehtod for initialize components.
+    protected void initComponents() {
+        
+       panel = new JPanel(new GridBagLayout());  //A GridBagLayout panel for buttons. 
        okButton = new JButton("OK♥");
        cancelButton = new JButton("Cancel");
-       panel.add(cancelButton);
-       panel.add(okButton);
-       add(panel);
+       gbc = new GridBagConstraints();
+    }
+
+   protected void addComponents() {
+       this.initComponents();  //initialized components.
+       setLayout(new BorderLayout());  //set frame to BorderLayout.
+       gbc.insets = new Insets(7, 7, 7, 7);
+       //---------Add buttons to panel.--------
+       gbc.gridx = 0;
+       gbc.gridy = 1;
+       panel.add(cancelButton, gbc);
+       gbc.gridx = 1;
+       gbc.gridy = 1;
+       panel.add(okButton, gbc);
+       //--------------------------------------
+       add(panel, BorderLayout.SOUTH);
    }
 
    protected void setFrameFeatures() {
