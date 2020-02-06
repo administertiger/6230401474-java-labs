@@ -1,6 +1,12 @@
 package pongsuwan.surapat.lab6;
 
-import java.awt.*;
+/*
+* Author : Surapat Pongsuwan
+* ID : 623040147-4
+* section : 2
+* Date : Febuary 5, 2020
+*/
+
 import javax.swing.*;
 
 public class PersonFormV4 extends PersonFormV3 {

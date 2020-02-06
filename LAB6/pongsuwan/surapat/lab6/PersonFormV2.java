@@ -1,5 +1,12 @@
 package pongsuwan.surapat.lab6;
 
+/*
+* Author : Surapat Pongsuwan
+* ID : 623040147-4
+* section : 2
+* Date : Febuary 4, 2020
+*/
+
 import java.awt.*;
 import javax.swing.*;
 
