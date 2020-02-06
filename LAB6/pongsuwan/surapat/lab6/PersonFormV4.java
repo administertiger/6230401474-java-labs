@@ -27,6 +27,7 @@ public class PersonFormV4 extends PersonFormV3 {
     } 
 
     protected void initComponents() {
+
         super.initComponents();
         //--------------Menus.---------------
         color_menu = new JMenu("Color");
@@ -42,7 +43,6 @@ public class PersonFormV4 extends PersonFormV3 {
      
     protected void addSubMenus() {
         this.initComponents();
-        super.addMenus();
         //-------Remove Config_menu's items.---------
         config_menu.remove(color_item);
         config_menu.remove(size_item);
@@ -67,6 +67,7 @@ public class PersonFormV4 extends PersonFormV3 {
         super.addMenus();
         updateMenuIcon();
         addSubMenus();
+        
     }
 
     public static void createAndShowGUI() {
