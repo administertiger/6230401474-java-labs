@@ -1,4 +1,4 @@
-    #"Java labs 2019"
+    #Java labs 2019
 
 Author : Suapat Pongsuwan
       Section : 2
