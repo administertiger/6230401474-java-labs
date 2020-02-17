@@ -16,7 +16,7 @@ public class PersonFormV2 extends PersonFormV1 {
     private static final long serialVersionUID = 1L;
     //---------------Components.-----------------
     private String note_text;
-    protected JTextArea text_note;  //Texts in note Label 
+    protected JTextArea note_area;  //Texts in note Label 
     protected JComboBox<String> sport_box;  //A Box for sports list.
     //------------Label components.---------------
     protected JLabel sport_label;
@@ -32,7 +32,7 @@ public class PersonFormV2 extends PersonFormV1 {
     protected void initComponents() {
         super.initComponents();
         note_text = "21st Century skills include Critical thinking, Creativity, Collaboration, Communication, etc.";
-        text_note = new JTextArea(2,1);
+        note_area = new JTextArea(2,1);
         sport_box = new JComboBox<String>(sports);
         //----------Label components.-----------
         sport_label = new JLabel("Sport:");
@@ -56,11 +56,11 @@ public class PersonFormV2 extends PersonFormV1 {
         gbc.gridy = 7;
         panel2.add(note_label, gbc);
         //-----------note section------------
-        text_note.setText(note_text);
-        text_note.setLineWrap(true);
-        text_note.setWrapStyleWord(true);
+        note_area.setText(note_text);
+        note_area.setLineWrap(true);
+        note_area.setWrapStyleWord(true);
         //------------------------------------
-        add(text_note, BorderLayout.CENTER);
+        add(note_area, BorderLayout.CENTER);
     }
 
     public static void createAndShowGUI() {

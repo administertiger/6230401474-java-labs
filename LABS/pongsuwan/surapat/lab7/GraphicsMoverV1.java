@@ -20,8 +20,8 @@ public class GraphicsMoverV1 extends MySimpleWindow {
     protected JButton moveUP_button, moveDown_button, moveLeft_button, moveRight_button, reset_button;
     
 
-    protected GraphicsMoverV1(String name) {
-        super(name);
+    protected GraphicsMoverV1(String title) {
+        super(title);
     }
 
     protected void initComponents() {
@@ -46,13 +46,8 @@ public class GraphicsMoverV1 extends MySimpleWindow {
         button_panel.add(reset_button);
 
         //Add to frame.
-        add(canvasDrawerV1, BorderLayout.NORTH);
+        add(canvasDrawerV1, BorderLayout.CENTER);
         add(button_panel, BorderLayout.SOUTH);   
-    }
-
-    
-    protected void setFrameFeatures() {
-        super.setFrameFeatures();
     }
 
     public static void createAndShowGUI() {

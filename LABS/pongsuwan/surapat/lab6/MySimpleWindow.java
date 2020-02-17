@@ -18,7 +18,7 @@ public class MySimpleWindow extends JFrame {
     private static final long serialVersionUID = 1L;
     // -------------Components.-----------------
    protected JPanel panel;  
-   protected JButton okButton, cancelButton;
+   protected JButton okButton , cancelButton;
    protected GridBagConstraints gbc;
     //-----------------------------------------
 
@@ -36,6 +36,7 @@ public class MySimpleWindow extends JFrame {
     }
 
    protected void addComponents() {
+    
        this.initComponents();  //initialized components.
        setLayout(new BorderLayout());  //set frame to BorderLayout.
        gbc.insets = new Insets(7, 7, 7, 7);

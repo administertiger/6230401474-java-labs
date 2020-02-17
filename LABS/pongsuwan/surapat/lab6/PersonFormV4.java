@@ -42,7 +42,7 @@ public class PersonFormV4 extends PersonFormV3 {
     }
      
     protected void addSubMenus() {
-        this.initComponents();
+        
         //-------Remove Config_menu's items.---------
         config_menu.remove(color_item);
         config_menu.remove(size_item);

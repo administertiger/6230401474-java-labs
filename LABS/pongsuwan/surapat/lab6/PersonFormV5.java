@@ -18,7 +18,7 @@ public class PersonFormV5 extends PersonFormV4 {
     Font label_font = new Font("Serif", Font.PLAIN, 14);
     Font input_font = new Font("Serif", Font.BOLD, 14);
 
-    PersonFormV5(String name) {
+    protected PersonFormV5(String name) {
         super(name);
     }
 

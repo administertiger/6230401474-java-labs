@@ -21,7 +21,7 @@ public class PersonFormV3 extends PersonFormV2 {
     //------------Hobby constructors.-------------
     protected JLabel hobby_label;  //hobby label.
     protected JList<String> hobby_list;
-    private String hobbies[] = {"Reading", "Tavelling", "Cooking", "Photogaphy"};
+    protected static String hobbies[] = {"Reading", "Tavelling", "Cooking", "Photogaphy"};
     //--------------------------------------------
 
     PersonFormV3(String name) {
@@ -43,7 +43,7 @@ public class PersonFormV3 extends PersonFormV2 {
         //-----------hobby list------------
         hobby_list = new JList<String>(hobbies);
 
-        hobby_label = new JLabel("Hobbies");
+        hobby_label = new JLabel("Hobbies :");
     }
 
     protected void addComponents() {

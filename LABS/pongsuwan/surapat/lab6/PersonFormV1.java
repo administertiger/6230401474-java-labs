@@ -19,7 +19,7 @@ public class PersonFormV1 extends MySimpleWindow {
     // -------------Components.-----------------
     protected JPanel panel2, radioPanel;
     protected JRadioButton student_radio, teacher_raio;
-    protected ButtonGroup group;
+    protected ButtonGroup radioButton_group;
     protected JLabel name_label, height_label, weight_label, birth_label, type_label;
     protected JTextField name_textField, height_textField, weight_textField, birth_textField;
     //-----------------------------------------
@@ -35,7 +35,7 @@ public class PersonFormV1 extends MySimpleWindow {
         student_radio = new JRadioButton("Student");
         teacher_raio = new JRadioButton("Teacher");
         radioPanel = new JPanel();
-        group = new ButtonGroup();
+        radioButton_group = new ButtonGroup();
         //--------Label components.-------------
         name_label = new JLabel("Name:");
         height_label = new JLabel("Height (cm.):");
@@ -54,8 +54,8 @@ public class PersonFormV1 extends MySimpleWindow {
         super.addComponents();  //Set the Layout with super.addComponents().
 
         //-------Group up the radioButtons.---------
-        group.add(student_radio);
-        group.add(teacher_raio);
+        radioButton_group.add(student_radio);
+        radioButton_group.add(teacher_raio);
         //--------Add radioButton to panel.---------
         radioPanel.add(student_radio);
         radioPanel.add(teacher_raio);
