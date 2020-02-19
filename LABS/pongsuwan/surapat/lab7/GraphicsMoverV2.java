@@ -1,3 +1,10 @@
+/*
+* Author : Surapat Pongsuwan
+* ID : 623040147-4
+* section : 2
+* Date : Febuary 16, 2020
+*/
+
 package pongsuwan.surapat.lab7;
 
 import java.awt.Font;
