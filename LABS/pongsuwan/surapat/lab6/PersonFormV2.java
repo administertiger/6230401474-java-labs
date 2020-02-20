@@ -23,7 +23,9 @@ public class PersonFormV2 extends PersonFormV1 {
     protected JLabel note_label;
     //------------A sports list.------------------
     protected String sports[] = {"Running","Swimming", "Tennis"};
-    
+    //-----------A scroll pane.-------------------
+    protected JScrollPane note_scrollPane;    
+
     //A defualt constructor.
     PersonFormV2(String name) {
         super(name);
@@ -37,6 +39,7 @@ public class PersonFormV2 extends PersonFormV1 {
         //----------Label components.-----------
         sport_label = new JLabel("Sport:");
         note_label = new JLabel("Note:");
+        note_scrollPane = new JScrollPane(note_area);
     }
 
     protected void addComponents() {
@@ -60,7 +63,7 @@ public class PersonFormV2 extends PersonFormV1 {
         note_area.setLineWrap(true);
         note_area.setWrapStyleWord(true);
         //------------------------------------
-        add(note_area, BorderLayout.CENTER);
+        add(note_scrollPane, BorderLayout.CENTER);
     }
 
     public static void createAndShowGUI() {

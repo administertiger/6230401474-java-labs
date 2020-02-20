@@ -34,7 +34,7 @@ public class PersonFormV5 extends PersonFormV4 {
         note_label.setFont(label_font);
         //----------Radio button section--------
         student_radio.setFont(label_font);
-        teacher_raio.setFont(label_font);
+        teacher_radio.setFont(label_font);
         //----------ComboBox section-------------
         sport_box.setFont(label_font);
         //------------List section---------------
@@ -74,12 +74,6 @@ public class PersonFormV5 extends PersonFormV4 {
         setColors();
         setValues();
     }
-    /*
-    protected void addMenus() {
-        super.addMenus();
-        this.initComponents();
-    }
-    */
 
     public static void createAndShowGUI() {
         PersonFormV5 personForm5 = new PersonFormV5("Person Form V5");

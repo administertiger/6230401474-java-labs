@@ -18,7 +18,7 @@ public class PersonFormV1 extends MySimpleWindow {
     private static final long serialVersionUID = 1L;
     // -------------Components.-----------------
     protected JPanel panel2, radioPanel;
-    protected JRadioButton student_radio, teacher_raio;
+    protected JRadioButton student_radio, teacher_radio;
     protected ButtonGroup radioButton_group;
     protected JLabel name_label, height_label, weight_label, birth_label, type_label;
     protected JTextField name_textField, height_textField, weight_textField, birth_textField;
@@ -33,7 +33,7 @@ public class PersonFormV1 extends MySimpleWindow {
         super.initComponents();
         panel2 = new JPanel(new GridBagLayout());  //set panel2's Layout to "GridBagLayout".
         student_radio = new JRadioButton("Student");
-        teacher_raio = new JRadioButton("Teacher");
+        teacher_radio = new JRadioButton("Teacher");
         radioPanel = new JPanel();
         radioButton_group = new ButtonGroup();
         //--------Label components.-------------
@@ -55,10 +55,10 @@ public class PersonFormV1 extends MySimpleWindow {
 
         //-------Group up the radioButtons.---------
         radioButton_group.add(student_radio);
-        radioButton_group.add(teacher_raio);
+        radioButton_group.add(teacher_radio);
         //--------Add radioButton to panel.---------
         radioPanel.add(student_radio);
-        radioPanel.add(teacher_raio);
+        radioPanel.add(teacher_radio);
         //--------------GridBag setting--------------
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(3, 3, 3, 3);
