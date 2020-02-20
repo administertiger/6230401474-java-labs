@@ -16,8 +16,9 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class PersonFormV6 extends PersonFormV5 implements ActionListener {
-
+    //Warnig alert.--------------------------------
     private static final long serialVersionUID = 1L;
+    //----------------------------------------------
   
     //Constructors.
     protected Object srcObject;  //Source object.
@@ -27,16 +28,11 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
         super(title);
         // TODO Auto-generated constructor stub
     }
-/*
-    protected void initComponents() {
-        dialog_icon = new ImageIcon("images,message_dialog.png");
-        Image dialog_image = dialog_icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-        dialog_icon = new ImageIcon(dialog_image);
-    }*/
 
     @Override
     public void actionPerformed(ActionEvent e) {
         srcObject = e.getSource();
+
         //-----------------Selected hobbies.--------------------
         String hobby = "";  
         int hobby_selected[] = hobby_list.getSelectedIndices();
@@ -66,7 +62,7 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
             "\n" + "Type : " + type + 
             "\n" + "Sport : " + sport_box.getSelectedItem() + 
             "\n" + "Hobbies : " + hobby + 
-            "\n" + "Note :" + note_area.getText(), "Person Information",JOptionPane.INFORMATION_MESSAGE , dialog_icon);
+            "\n" + "Note : " + note_area.getText(), "Person Information",JOptionPane.INFORMATION_MESSAGE , dialog_icon);
         } else if (srcObject == cancelButton) {
             this.setText();
         }

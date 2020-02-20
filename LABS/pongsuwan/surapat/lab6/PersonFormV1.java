@@ -61,7 +61,7 @@ public class PersonFormV1 extends MySimpleWindow {
         radioPanel.add(teacher_radio);
         //--------------GridBag setting--------------
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.insets = new Insets(3, 3, 3, 3);
+        gbc.insets = new Insets(1, 1, 1, 1);
         //-----------Add Label to panel.-------------
         gbc.gridx = 0;
         gbc.gridy = 0;
