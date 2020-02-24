@@ -17,9 +17,11 @@ public class CanvasDrawerV1 extends JPanel {
     private Color CANVAS_BACKGROUND = Color.green;
 
     //Constant variables.
-    private int CANVAS_WIDTH = 800, CANVAS_HEIGHT = 500;
-    private float LINE_WIDTH = 4.0f;
-    private int CIRCLE_RADIUS = 50, DOT_CIRCLE_RADIUS = 5;
+    public int CANVAS_WIDTH = 800;
+
+	protected int CANVAS_HEIGHT = 500;
+    protected float LINE_WIDTH = 4.0f;
+    protected int CIRCLE_RADIUS = 50, DOT_CIRCLE_RADIUS = 5;
 
     public CanvasDrawerV1() {
        
@@ -32,6 +34,11 @@ public class CanvasDrawerV1 extends JPanel {
         Graphics2D g2D = (Graphics2D) g;
         int width = this.getWidth();
         int height = this.getHeight();
+        //--------------------Circle in the center.------------------------
+        g2D.setColor(Color.WHITE);
+        g2D.drawOval((width/2) - CIRCLE_RADIUS, (height/2) - CIRCLE_RADIUS, CIRCLE_RADIUS * 2,
+        CIRCLE_RADIUS * 2);
+
         //----------------------Setting g2D.------------------------------
         g2D.setStroke(new BasicStroke(LINE_WIDTH));
         g2D.setColor(Color.BLACK);
@@ -53,11 +60,5 @@ public class CanvasDrawerV1 extends JPanel {
 
         g2D.fillOval(width - (113 - DOT_CIRCLE_RADIUS), height/2 + DOT_CIRCLE_RADIUS, 
         DOT_CIRCLE_RADIUS*2, DOT_CIRCLE_RADIUS*2);  //Right side.
-
-        //--------------------Circle in the center.------------------------
-        g2D.setColor(Color.WHITE);
-        g2D.drawOval((width/2) - CIRCLE_RADIUS, (height/2) - CIRCLE_RADIUS, CIRCLE_RADIUS * 2,
-        CIRCLE_RADIUS * 2);
-
     }
 }
