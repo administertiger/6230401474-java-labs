@@ -15,7 +15,7 @@ public class GraphicsMoverV4 extends GraphicsMoverV3 {
 
     private static final long serialVersionUID = 1L;
 
-    private CanvasDrawerV2 canvasDrawerV2;  //CanvasV2 variable from class "CanvasDrawerV2".
+    protected CanvasDrawerV2 canvasDrawerV2;  //CanvasV2 variable from class "CanvasDrawerV2".
 
     protected GraphicsMoverV4(String title) {
         super(title);
@@ -33,6 +33,7 @@ public class GraphicsMoverV4 extends GraphicsMoverV3 {
 
     protected void addComponents() {
         super.addComponents();
+        remove(canvasDrawerV1);
         add(canvasDrawerV2, BorderLayout.CENTER);
     }
 

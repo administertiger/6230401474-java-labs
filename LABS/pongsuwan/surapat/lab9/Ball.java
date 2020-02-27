@@ -24,17 +24,17 @@ class Ball extends Ellipse2D.Double {
     }
 
     //----------------Getter and Setter.------------------
-    protected int get_xVelo() {
+    protected int get_x_velo() {
         return this.xVelocity;
     }
-    protected void set_xVelo(int _xVelocity) {
+    protected void set_x_velo(int _xVelocity) {
        this.xVelocity = _xVelocity;
     }
 
-    protected int get_yVelo() {
+    protected int get_y_velo() {
         return this.yVelocity;
     }
-    protected void set_yVelo(int _yVelocity) {
+    protected void set_y_velo(int _yVelocity) {
        this.yVelocity = _yVelocity;
     }
 
