@@ -22,7 +22,7 @@ public class Keeper extends Rectangle2D.Double {
         }
     }
     public void moveDown() {
-        if (y + KEEPER_SPEED <= 350)  {
+        if (y + KEEPER_HEIGHT + KEEPER_SPEED <= 350)  {
             y = y + KEEPER_SPEED;
         }
     }
