@@ -15,7 +15,7 @@ public class GraphicsMoverV4 extends GraphicsMoverV3 {
 
     private static final long serialVersionUID = 1L;
 
-    protected CanvasDrawerV2 canvasDrawerV2;  //CanvasV2 variable from class "CanvasDrawerV2".
+    protected CanvasDrawerV2 canvasDrawerV2;  
 
     protected GraphicsMoverV4(String title) {
         super(title);
@@ -33,15 +33,14 @@ public class GraphicsMoverV4 extends GraphicsMoverV3 {
 
     protected void addComponents() {
         super.addComponents();
-        remove(canvasDrawerV1);
-        add(canvasDrawerV2, BorderLayout.CENTER);
+        main_panel.remove(canvasDrawerV1);
+        main_panel.add(canvasDrawerV2, BorderLayout.CENTER);
     }
 
     public static void createAndShowGUI() {
         GraphicsMoverV4 gpmvV4 = new GraphicsMoverV4("Graphics Mover Version 4");
         gpmvV4.initComponents();
         gpmvV4.addComponents();
-        gpmvV4.addMenus();
         gpmvV4.setFrameFeatures();
     }
     public static void main(String[] args) {

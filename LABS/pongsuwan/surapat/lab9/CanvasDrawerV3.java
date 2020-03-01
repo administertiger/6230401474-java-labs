@@ -9,27 +9,29 @@ package pongsuwan.surapat.lab9;
 
 import java.util.Random;
 
+
 public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
     private static final long serialVersionUID = 1L;
 
-    protected static final int minRand = 1, maxRand = 4;
-
     protected Thread running;
-    private Random random_x, random_y;
-    private int maxVal = 4, minVal = 1;
+    protected Random random_x, random_y;
+    protected int maxVal = 2, minVal = -2;
 
     public CanvasDrawerV3() {
         super();
         running = new Thread(this);
-
         random_x = new Random();
         random_y = new Random();
 
-        int xv = random_x.nextInt(maxVal - minVal + 1) + 1;
-        int yv = random_y.nextInt(maxVal - minVal + 1) + 1;
+        int xv = random_x.nextInt(maxVal - minVal + 1) + minVal;
+        int yv = random_y.nextInt(maxVal - minVal + 1) + minVal;
 
-        this.ball.set_x_velo(xv);
-        this.ball.set_y_velo(yv);
+        //Make sure that's velocity isn't = 0.
+        if (xv == 0 ) xv += 1 ;
+        else if (yv == 0) yv += 1 ;
+
+        this.ball.set_x_velo(-2);
+        this.ball.set_y_velo(0);
 
         running.start();
     }
@@ -38,14 +40,14 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
     public void run() {
         while(true) {
             //Check if the ball hits the vertical wall.
-            if (verticalWall()) {
+            if (isHitVerticalWall()) {
                 //Check if the ball doesn't hit the goal.
-               if (goal()) {
+               if (isNotHitGoal()) {
                 changeXVelocity();
                }
             } 
             //Check if the ball hits the horizintal wall.
-            else if (horizontalWall()) {
+            else if (isHitHorizontalWall()) {
                changeYVelocity();
             }
 
@@ -62,23 +64,28 @@ public class CanvasDrawerV3 extends CanvasDrawerV2 implements Runnable {
     }
 
     //--------------------------------Conditions.---------------------------------
-    protected boolean verticalWall() {
+    protected boolean isHitVerticalWall() {
         return ball.getX() <= 0 ||  ball.getX() + Ball.BALL_DIAMETER >= CANVAS_WIDTH;
     }
-    protected boolean horizontalWall() {
+    protected boolean isHitHorizontalWall() {
         return ball.getY() <= 0 || ball.getY() + Ball.BALL_DIAMETER >= CANVAS_HEIGHT;
     }
-    protected boolean goal() {
+    protected boolean isNotHitGoal() {
         return ball.getY() + Ball.BALL_DIAMETER <= 150 || ball.getY() + Ball.BALL_DIAMETER >= 350;
     }
 
-    //To change x, y velocity.
+    //----------------------------------Actions.-----------------------------------
+
+    //Change x velocity.
     protected void changeXVelocity() {
         int xVelocity = this.ball.get_x_velo();
         this.ball.set_x_velo(xVelocity * -1);
     }
+    //Change y velocity.
     protected void changeYVelocity() {
         int yVelocity = this.ball.get_y_velo();
         this.ball.set_y_velo(yVelocity * -1);
     }
+    
+    //---------------------------------------------------------------------------------
 }

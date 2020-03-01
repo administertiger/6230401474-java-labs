@@ -39,6 +39,11 @@ public class GraphicsMoverV3 extends GraphicsMoverV2 {
         open_icon = new ImageIcon("images/open.png");
     }    
 
+    protected void addComponents() {
+        super.addComponents();
+        addMenus();
+    }
+
     protected void setIcon() {
         Image open_image = open_icon.getImage().getScaledInstance(22, 22, Image.SCALE_SMOOTH);
         open_icon = new ImageIcon(open_image);
@@ -63,7 +68,6 @@ public class GraphicsMoverV3 extends GraphicsMoverV2 {
         GraphicsMoverV3 gpmvV3 = new GraphicsMoverV3("Graphics Mover Version 3");
         gpmvV3.initComponents();
         gpmvV3.addComponents();
-        gpmvV3.addMenus();
         gpmvV3.setFrameFeatures();
     }
     public static void main(String[] args) {

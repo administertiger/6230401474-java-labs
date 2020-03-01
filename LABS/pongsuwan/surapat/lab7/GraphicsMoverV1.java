@@ -15,24 +15,23 @@ public class GraphicsMoverV1 extends MySimpleWindow {
 
     private static final long serialVersionUID = 1L;
 
-    protected JPanel button_panel;
+    protected JPanel button_panel, main_panel;
     protected CanvasDrawerV1 canvasDrawerV1;
     protected JButton moveUP_button, moveDown_button, moveLeft_button, moveRight_button, reset_button;
     
-
     protected GraphicsMoverV1(String title) {
         super(title);
     }
 
     protected void initComponents() {
         canvasDrawerV1 = new CanvasDrawerV1();
-        button_panel = new JPanel();
+        button_panel = new JPanel(new FlowLayout());
+        main_panel = new JPanel(new BorderLayout());
         moveUP_button = new JButton("UP");
         moveDown_button = new JButton("DOWN");
         moveLeft_button = new JButton("LEFT");
         moveRight_button = new JButton("RIGHT");
         reset_button = new JButton("RESET");
-
     }
 
     @Override
@@ -45,9 +44,11 @@ public class GraphicsMoverV1 extends MySimpleWindow {
         button_panel.add(moveRight_button);
         button_panel.add(reset_button);
 
+        main_panel.add(canvasDrawerV1, BorderLayout.CENTER);
+        main_panel.add(button_panel, BorderLayout.PAGE_END);
+
         //Add to frame.
-        add(canvasDrawerV1, BorderLayout.CENTER);
-        add(button_panel, BorderLayout.SOUTH);   
+        add(main_panel);
     }
 
     public static void createAndShowGUI() {

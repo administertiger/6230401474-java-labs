@@ -14,6 +14,7 @@ public class FootballGameV1 extends GraphicsMoverV4 {
 
     private static final long serialVersionUID = 1L;
 
+    //CanvasDrawer.
     protected CanvasDrawerV3 canvasDrawerV3;
 
     protected FootballGameV1(String title) {
@@ -29,15 +30,14 @@ public class FootballGameV1 extends GraphicsMoverV4 {
     @Override
     protected void addComponents() {
         super.addComponents();
-        remove(canvasDrawerV2);
-        add(canvasDrawerV3, BorderLayout.CENTER);
+        main_panel.remove(canvasDrawerV2);
+        main_panel.add(canvasDrawerV3, BorderLayout.CENTER);
     }
 
     public static void createAndShowGUI() {
-        FootballGameV1 footballV1 = new FootballGameV1("FootballGameV1");
+        FootballGameV1 footballV1 = new FootballGameV1("Football Game V1");
         footballV1.initComponents();
         footballV1.addComponents();
-        footballV1.addMenus();
         footballV1.setFrameFeatures();
     }
     public static void main(String[] args) {

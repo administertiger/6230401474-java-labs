@@ -32,6 +32,8 @@ public class PersonFormV6 extends PersonFormV5 implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         srcObject = e.getSource();
+        System.out.println(srcObject + "\n");
+        System.out.println(cancelButton);
 
         //-----------------Selected hobbies.--------------------
         String hobby = "";  

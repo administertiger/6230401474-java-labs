@@ -17,14 +17,11 @@ public class CanvasDrawerV1 extends JPanel {
     private Color CANVAS_BACKGROUND = Color.green;
 
     //Constant variables.
-    public int CANVAS_WIDTH = 800;
-
-	protected int CANVAS_HEIGHT = 500;
-    protected float LINE_WIDTH = 4.0f;
+    protected int CANVAS_HEIGHT = 500, CANVAS_WIDTH = 800;
     protected int CIRCLE_RADIUS = 50, DOT_CIRCLE_RADIUS = 5;
-
+    protected float LINE_WIDTH = 4.0f;
+    
     public CanvasDrawerV1() {
-       
         setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
         setBackground(CANVAS_BACKGROUND);
     }

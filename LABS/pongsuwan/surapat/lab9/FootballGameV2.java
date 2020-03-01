@@ -15,8 +15,8 @@ public class FootballGameV2 extends FootballGameV1 implements ActionListener, Ke
 
     private static final long serialVersionUID = 1L;
 
-    protected Object srcObject; 
-    protected CanvasDrawerV4 canvasDrawerV4;
+    //CanvasDrawer.
+    protected CanvasDrawerV4 canvasDrawerFBG;
 
     protected FootballGameV2(String title) {
         super(title);
@@ -26,31 +26,17 @@ public class FootballGameV2 extends FootballGameV1 implements ActionListener, Ke
 
     protected void initComponents() {
         super.initComponents();
-        canvasDrawerV4 = new CanvasDrawerV4();
+        canvasDrawerFBG = new CanvasDrawerV4();
     }
-
+    
     @Override
     protected void addComponents() {
         super.addComponents();
-        add(canvasDrawerV4, BorderLayout.CENTER);
+        main_panel.remove(canvasDrawerV3);
+        main_panel.add(canvasDrawerFBG, BorderLayout.CENTER);
     }
-
+    
     //------------Actionlistener section.---------------
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        srcObject = e.getSource();
-
-        if (srcObject == moveUP_button) {
-            canvasDrawerV4.keeperLeft.moveUp();
-        } else if (srcObject == moveDown_button) {
-            canvasDrawerV4.keeperLeft.moveDown();
-        } else if (srcObject == moveLeft_button) {
-            canvasDrawerV4.keeperRight.moveUp();
-        } else if (srcObject == moveRight_button) {
-            canvasDrawerV4.keeperRight.moveDown();
-        }
-    }
-
     protected void addListeners() {
         moveUP_button.addActionListener(this);
         moveDown_button.addActionListener(this);
@@ -60,21 +46,39 @@ public class FootballGameV2 extends FootballGameV1 implements ActionListener, Ke
         this.addKeyListener(this);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object object = e.getSource();
+
+        if (object == moveUP_button) {
+            canvasDrawerFBG.keeperLeft.moveUp();
+        } else if (object == moveDown_button) {
+            canvasDrawerFBG.keeperLeft.moveDown();
+        } else if (object == moveLeft_button) {
+            canvasDrawerFBG.keeperRight.moveUp();
+        } else if (object == moveRight_button) {
+            canvasDrawerFBG.keeperRight.moveDown();
+        }
+
+        requestFocus();
+    }
+
     //----------------Keylistener section.---------------
     @Override
 	public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         
         if (key == KeyEvent.VK_UP) {
-            canvasDrawerV4.keeperRight.moveUp();
+            canvasDrawerFBG.keeperRight.moveUp();
         } else if (key == KeyEvent.VK_DOWN) {
-            canvasDrawerV4.keeperRight.moveDown();
+            canvasDrawerFBG.keeperRight.moveDown();
         } else if (key == KeyEvent.VK_W) {
-            canvasDrawerV4.keeperLeft.moveUp();
+            canvasDrawerFBG.keeperLeft.moveUp();
         } else if (key == KeyEvent.VK_S) {
-            canvasDrawerV4.keeperLeft.moveDown();
+            canvasDrawerFBG.keeperLeft.moveDown();
         }
     }
+
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -83,12 +87,13 @@ public class FootballGameV2 extends FootballGameV1 implements ActionListener, Ke
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
     }
-    
+
+    //-----------------------------------------------------
+
     public static void createAndShowGUI() {
-        FootballGameV2 footballV2 = new FootballGameV2("FootballGameV2");
+        FootballGameV2 footballV2 = new FootballGameV2("Football Game V2");
         footballV2.initComponents();
         footballV2.addComponents();
-        footballV2.addMenus();
         footballV2.addListeners();
         footballV2.setFrameFeatures();
     }

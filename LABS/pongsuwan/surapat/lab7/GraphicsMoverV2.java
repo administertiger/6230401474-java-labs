@@ -37,17 +37,21 @@ public class GraphicsMoverV2 extends GraphicsMoverV1 {
         //Text field.
         khonkaen_field = new JTextField();
         udon_field = new JTextField();
+
+        this.setValues();
     }
 
     protected void setValues() {
         //Set text.
         khonkaen_field.setText("3");
         udon_field.setText("1");
+
         //Set fonts.
         khonkaen_label.setFont(serif20_font);
         udon_label.setFont(serif20_font);
         khonkaen_field.setFont(serif20_font);
         udon_field.setFont(serif20_font);
+
         //Set color.
         khonkaen_label.setForeground(Color.BLUE);
         udon_label.setForeground(Color.RED);
@@ -56,13 +60,11 @@ public class GraphicsMoverV2 extends GraphicsMoverV1 {
 
     protected GraphicsMoverV2(String title) {
         super(title);
-
     }
 
     protected void addComponents() {
         super.addComponents();
-        this.initComponents();
-        this.setValues();
+        
         //-------------Add things to panel------------------
         score_panel.add(khonkaen_label);
         score_panel.add(khonkaen_field);

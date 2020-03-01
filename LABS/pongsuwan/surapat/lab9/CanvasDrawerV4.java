@@ -15,24 +15,24 @@ public class CanvasDrawerV4 extends CanvasDrawerV3 {
     public void run() {
         while(true) {
             //Check if the ball hits the vertical wall.
-            if (verticalWall()) {
+            if (isHitVerticalWall()) {
                 //Check if the ball doesn't hit the goal.
-               if (goal()) {
+               if (isNotHitGoal()) {
                 changeXVelocity();
                }
             }
             //Check if the ball hits the horizintal wall.
-            else if (horizontalWall()) {
+            else if (isHitHorizontalWall()) {
                changeYVelocity();
             } 
 
-            //Check if the ball hits the right goal keeper.
-            else if (keeperRight()) {
+            //Check if the ball hits the right goalkeeper.
+            else if (isHitKeeperRight()) {
                 changeXVelocity();
             } 
             
-            //Check if the ball hits the left goal keeper.
-            else if (keeperLeft()) {
+            //Check if the ball hits the left goalkeeper.
+             else if (isHitKeeperLeft()) {
                 changeXVelocity();
             }
 
@@ -49,12 +49,12 @@ public class CanvasDrawerV4 extends CanvasDrawerV3 {
     }
 
     //------------------------Conditions.-------------------------------
-    protected boolean keeperRight() {
-        return ball.getX()  + Ball.BALL_DIAMETER == keeperRight.getX() 
+    protected boolean isHitKeeperRight() {
+        return ball.getX()  + Ball.BALL_DIAMETER >= keeperRight.getX() 
             && ball.getY() + Ball.BALL_DIAMETER >= keeperRight.getY()
             && ball.getY() + Ball.BALL_DIAMETER <= keeperRight.getY() + Keeper.KEEPER_HEIGHT; 
     }
-    protected boolean keeperLeft() {
+    protected boolean isHitKeeperLeft() {
         return ball.getX() <= keeperLeft.getX() + Keeper.KEEPER_WIDTH
             && ball.getY() + Ball.BALL_DIAMETER >= keeperLeft.getY()
             && ball.getY() + Ball.BALL_DIAMETER <= keeperLeft.getY() + Keeper.KEEPER_HEIGHT;
