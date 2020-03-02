@@ -15,7 +15,7 @@ public class PersonFormV2 extends PersonFormV1 {
     //Quick fix warning: Java(536871008)
     private static final long serialVersionUID = 1L;
     //---------------Components.-----------------
-    private String note_text;
+    protected String note_text;
     protected JTextArea note_area;  //Texts in note Label 
     protected JComboBox<String> sport_box;  //A Box for sports list.
     //------------Label components.---------------
