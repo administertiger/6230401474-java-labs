@@ -15,6 +15,7 @@ public class PersonFormV3 extends PersonFormV2 {
     //Quick fix warning: Java(536871008)
     private static final long serialVersionUID = 1L;
     //------------Menus constructors.-------------
+    protected JMenuBar menuBar;
     protected JMenu file_menu, config_menu;
     protected JMenuItem new_item, open_item, save_item, exit_item;  //File's items.
     protected JMenuItem color_item, size_item;  //Config's items.
@@ -59,7 +60,7 @@ public class PersonFormV3 extends PersonFormV2 {
     }
 
     protected void addMenus() {
-        JMenuBar menuBar = new JMenuBar();  //A menubar.
+        menuBar = new JMenuBar();  //A menubar.
         
         //Add items to File.
         file_menu.add(new_item);

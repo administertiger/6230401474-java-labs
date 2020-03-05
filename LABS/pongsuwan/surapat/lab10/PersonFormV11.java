@@ -21,8 +21,9 @@ import javax.swing.SwingUtilities;
 import pongsuwan.surapat.lab8.*;
 
 public class PersonFormV11 extends PersonFormV10 {
-
+    //Warnig alert.--------------------------------
     private static final long serialVersionUID = 1L;
+    //---------------------------------------------
 
     //Variable.
     protected JMenuItem custom_item;
