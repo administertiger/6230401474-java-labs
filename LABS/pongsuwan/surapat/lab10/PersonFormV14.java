@@ -56,19 +56,11 @@ public class PersonFormV14 extends PersonFormV13 {
 
         if (returnVal == JFileChooser.APPROVE_OPTION);
             if (file_name.contains(file.getName())) {
-                try {
-                    Scanner fileReader = new Scanner(file);
-                    String list = "";
-
-                    while (fileReader.hasNextLine()) {
-                        list += fileReader.nextLine() + "\n";
-                    }
-                    fileReader.close();
-
-                    JOptionPane.showMessageDialog(this, list);
-                } catch (Exception e) {
-
-                }
+                String list = "";
+        for (Person person : person_list) {
+            list += person + "\n";
+        }
+        JOptionPane.showMessageDialog(this, list, "Person List", JOptionPane.INFORMATION_MESSAGE);
         }
 
         else if (returnVal == JFileChooser.CANCEL_OPTION) {
