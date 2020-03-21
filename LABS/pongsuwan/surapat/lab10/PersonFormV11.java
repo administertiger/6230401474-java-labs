@@ -78,31 +78,39 @@ public class PersonFormV11 extends PersonFormV10 {
 
         //File chooser.
         if (sObject == open_item) {
-            int returnVal = file_chooser.showOpenDialog(PersonFormV11.this);
-
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = file_chooser.getSelectedFile();
-                JOptionPane.showMessageDialog(this, "Opening file " + file.getName(), "Message", JOptionPane.INFORMATION_MESSAGE);
-            } else if (returnVal == JFileChooser.CANCEL_OPTION) {
-                JOptionPane.showMessageDialog(this, "Open command cancelled by user.", "Message", JOptionPane.INFORMATION_MESSAGE);
-            }
+            openFile();
         }
         
         //Svae item.
         if (sObject == save_item) {
-            int returnVal = file_chooser.showSaveDialog(PersonFormV11.this);
-
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-                File file = file_chooser.getSelectedFile();
-                JOptionPane.showMessageDialog(this, "Saving file " + file.getName(), "Message", JOptionPane.INFORMATION_MESSAGE);
-            } else if (returnVal == JFileChooser.CANCEL_OPTION) {
-                JOptionPane.showMessageDialog(this, "Open command cancelled by user.", "Message", JOptionPane.INFORMATION_MESSAGE);
-            }
+            saveFile();
         }
 
         //Exit program.
         if (sObject == exit_item) {
             System.exit(0);
+        }
+    }
+
+    protected void openFile() {
+        int returnVal = file_chooser.showOpenDialog(PersonFormV11.this);
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = file_chooser.getSelectedFile();
+            JOptionPane.showMessageDialog(this, "Opening file " + file.getName(), "Message", JOptionPane.INFORMATION_MESSAGE);
+        } else if (returnVal == JFileChooser.CANCEL_OPTION) {
+            JOptionPane.showMessageDialog(this, "Open command cancelled by user.", "Message", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    protected void saveFile() {
+        int returnVal = file_chooser.showSaveDialog(PersonFormV11.this);
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = file_chooser.getSelectedFile();
+            JOptionPane.showMessageDialog(this, "Saving file " + file.getName(), "Message", JOptionPane.INFORMATION_MESSAGE);
+        } else if (returnVal == JFileChooser.CANCEL_OPTION) {
+            JOptionPane.showMessageDialog(this, "Open command cancelled by user.", "Message", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
