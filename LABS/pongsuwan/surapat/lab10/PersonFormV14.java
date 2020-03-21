@@ -7,10 +7,12 @@
 package pongsuwan.surapat.lab10;
 
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -19,8 +21,6 @@ import javax.swing.SwingUtilities;
 public class PersonFormV14 extends PersonFormV13 {
 
     private static final long serialVersionUID = 1L;
-
-    private ArrayList<String> file_name;  //Make a list of file name to check whether that file has been created.
 
     protected PersonFormV14(String title) {
         super(title);
@@ -38,10 +38,18 @@ public class PersonFormV14 extends PersonFormV13 {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             try {
                 File file = file_chooser.getSelectedFile();
-                FileWriter fileWriter = new FileWriter(file);
-                file_name.add(file.getName());  //Add file name to the list.
-                fileWriter.write("");
-                fileWriter.close();
+                FileOutputStream file_output = new FileOutputStream(file);
+                ObjectOutputStream object_output = new ObjectOutputStream(file_output);
+
+                //Write each line of person list to file.
+                String line = "";
+                for (Person person : person_list) {
+                    line += person + "\n";
+                }
+                object_output.writeObject(line);
+                
+                file_output.close();
+                object_output.close();
             } catch (IOException e) {
                 e.printStackTrace(System.err);
             }
@@ -52,17 +60,22 @@ public class PersonFormV14 extends PersonFormV13 {
 
     protected void openFile() {
         int returnVal = file_chooser.showOpenDialog(this);
-        File file = file_chooser.getSelectedFile();
-
-        if (returnVal == JFileChooser.APPROVE_OPTION);
-            if (file_name.contains(file.getName())) {
-                String list = "";
-        for (Person person : person_list) {
-            list += person + "\n";
+        
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            try {
+                //Read data from file.
+                File file = file_chooser.getSelectedFile();
+                FileInputStream file_input = new FileInputStream(file);
+                ObjectInputStream object_input = new ObjectInputStream(file_input);
+                
+                //Showing dialog.
+                JOptionPane.showMessageDialog(this, object_input.readObject());
+                
+            } catch (Exception e) {
+                System.out.println("*********error*********");
+            }
+            
         }
-        JOptionPane.showMessageDialog(this, list, "Person List", JOptionPane.INFORMATION_MESSAGE);
-        }
-
         else if (returnVal == JFileChooser.CANCEL_OPTION) {
             JOptionPane.showMessageDialog(this, "Open command cancelled by user.");
         }
