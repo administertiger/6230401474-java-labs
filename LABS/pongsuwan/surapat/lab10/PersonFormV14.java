@@ -27,11 +27,6 @@ public class PersonFormV14 extends PersonFormV13 {
         // TODO Auto-generated constructor stub
     }
 
-    protected void initComponents() {
-        super.initComponents();
-        file_name = new ArrayList<>();
-    }
-
     protected void saveFile() {
         int returnVal = file_chooser.showSaveDialog(this);
 
